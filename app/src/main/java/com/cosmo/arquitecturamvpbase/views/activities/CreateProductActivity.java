@@ -17,6 +17,7 @@ import com.cosmo.arquitecturamvpbase.model.Product;
 import com.cosmo.arquitecturamvpbase.presenter.BasePresenter;
 import com.cosmo.arquitecturamvpbase.presenter.CreateProductPresenter;
 import com.cosmo.arquitecturamvpbase.presenter.ProductPresenter;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.repository.ProductRepository;
 import com.cosmo.arquitecturamvpbase.views.BaseActivity;
 
@@ -24,7 +25,7 @@ import com.cosmo.arquitecturamvpbase.views.BaseActivity;
  * Created by jersonsuaza on 9/19/17.
  */
 
-public class CreateProductActivity  extends BaseActivity<CreateProductPresenter> implements ICreateProductView, TextWatcher {
+public class CreateProductActivity  extends BaseActivity<CreateProductPresenter, BaseRepository> implements ICreateProductView, TextWatcher {
 
 
     private EditText product_etName, product_etDescription, product_etPrice, product_etQuantity;

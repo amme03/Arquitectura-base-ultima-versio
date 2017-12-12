@@ -4,7 +4,8 @@ import android.app.Application;
 import android.content.Intent;
 import android.util.Log;
 
-import com.cosmo.arquitecturamvpbase.views.activities.DashBoardActivity;
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.Tracker;
 import com.onesignal.OSNotification;
 import com.onesignal.OSNotificationAction;
 import com.onesignal.OSNotificationOpenResult;
@@ -17,7 +18,16 @@ import org.json.JSONObject;
  */
 
 public class App extends Application {
+  private Tracker mTracker;
 
+  synchronized  public Tracker  getDefauldTracker(){
+      if(mTracker==null){
+          GoogleAnalytics analytics= GoogleAnalytics.getInstance(this);
+         // mTracker=analytics.newTracker(R.xml.global_tracker);
+      }
+
+      return mTracker;
+  }
     @Override
     public void onCreate() {
         super.onCreate();
@@ -56,15 +66,5 @@ public class App extends Application {
     }
 
 
-    private class NotificationOpenedHandler implements OneSignal.NotificationOpenedHandler {
 
-        @Override
-        public void notificationOpened(OSNotificationOpenResult result) {
-            OSNotificationAction.ActionType actionType=result.action.type;
-            if(actionType==OSNotificationAction.ActionType.ActionTaken){
-                Intent intent= new Intent(getApplicationContext(), DashBoardActivity.class);
-                startActivity(intent);
-            }
-        }
-    }
 }

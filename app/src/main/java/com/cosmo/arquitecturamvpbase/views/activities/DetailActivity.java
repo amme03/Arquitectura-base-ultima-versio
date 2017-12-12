@@ -12,6 +12,7 @@ import com.cosmo.arquitecturamvpbase.R;
 import com.cosmo.arquitecturamvpbase.helper.Constants;
 import com.cosmo.arquitecturamvpbase.model.Product;
 import com.cosmo.arquitecturamvpbase.presenter.DetailProductPresenter;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.repository.ProductRepository;
 import com.cosmo.arquitecturamvpbase.views.BaseActivity;
 
@@ -19,7 +20,7 @@ import com.cosmo.arquitecturamvpbase.views.BaseActivity;
  * Created by leidyzulu on 16/09/17.
  */
 
-public class DetailActivity extends BaseActivity<DetailProductPresenter> implements IDetailProductView {
+public class DetailActivity extends BaseActivity<DetailProductPresenter, BaseRepository> implements IDetailProductView {
 
     private TextView nameValue;
     private TextView descriptionValue;

@@ -2,6 +2,7 @@ package com.cosmo.arquitecturamvpbase.presenter;
 
 import com.cosmo.arquitecturamvpbase.R;
 import com.cosmo.arquitecturamvpbase.model.Product;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.repository.IProductRepository;
 import com.cosmo.arquitecturamvpbase.repository.ProductRepository;
 import com.cosmo.arquitecturamvpbase.views.activities.ICreateProductView;
@@ -12,7 +13,7 @@ import retrofit.RetrofitError;
  * Created by jersonsuaza on 9/19/17.
  */
 
-public class CreateProductPresenter extends BasePresenter<ICreateProductView> {
+public class CreateProductPresenter extends BasePresenter<ICreateProductView, BaseRepository> {
 
     private IProductRepository productRepository;
 

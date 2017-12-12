@@ -1,12 +1,17 @@
 package com.cosmo.arquitecturamvpbase.presenter;
 
+import android.annotation.SuppressLint;
+import android.graphics.Movie;
 import android.util.Log;
 
 import com.cosmo.arquitecturamvpbase.R;
 import com.cosmo.arquitecturamvpbase.model.Breakfast_menu;
+import com.cosmo.arquitecturamvpbase.model.MovieInfo;
 import com.cosmo.arquitecturamvpbase.model.Product;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.repository.MapperError;
 import com.cosmo.arquitecturamvpbase.repository.MenuRepository;
+import com.cosmo.arquitecturamvpbase.repository.MoviesRepository;
 import com.cosmo.arquitecturamvpbase.repository.NoteRepository;
 import com.cosmo.arquitecturamvpbase.repository.ProductRepository;
 import com.cosmo.arquitecturamvpbase.repository.RepositoryError;
@@ -20,16 +25,18 @@ import retrofit.RetrofitError;
  * Created by leidyzulu on 16/09/17.
  */
 
-public class ProductPresenter extends BasePresenter<IProductView> {
+public class ProductPresenter extends BasePresenter<IProductView, BaseRepository> {
 
     private ProductRepository productRepository;
     private NoteRepository noteRepository;
+    private MoviesRepository moviesRepository;
     private MenuRepository menuRepository;
 
 
     public ProductPresenter() {
         productRepository = new ProductRepository();
         noteRepository=new NoteRepository();
+        moviesRepository=new MoviesRepository();
         menuRepository=new MenuRepository();
 
     }
@@ -53,14 +60,17 @@ public class ProductPresenter extends BasePresenter<IProductView> {
         thread.start();
     }
 
+    @SuppressLint("LongLogTag")
     private void getProductList() {
 
         try {
           ArrayList<Product> productArrayList = productRepository.getProductList();
           //  Note note=noteRepository.getNote();
           // Log.i("NOTE=================="+note.getFrom(),"NOTESSSSSS"+note.getTo());
-            Breakfast_menu menu= menuRepository.getMenu();
-            Log.i("Menu==================",menu.toString());
+          //  Breakfast_menu menu= menuRepository.getMenu();
+           // Log.i("Menu==================",menu.toString());
+            ArrayList<MovieInfo> movies = moviesRepository.getMovies();
+            Log.i("Movies==================","Pelicula"+movies.toString());
           getView().showProductList(productArrayList);
 
         } catch (RetrofitError retrofitError) {

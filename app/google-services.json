@@ -1,0 +1,43 @@
+{
+  "project_info": {
+    "project_number": "1088849868152",
+    "project_id": "firebase-empanadas"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088849868152:android:6bda1f04c80acf2a",
+        "android_client_info": {
+          "package_name": "com.cosmo.arquitecturamvpbase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088849868152-r26tvr091geptcaokaau3hqbsk6slf12.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8Rmy58ka_zwpjxbFKXbCOnzSLaN72Pbs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-110542734-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

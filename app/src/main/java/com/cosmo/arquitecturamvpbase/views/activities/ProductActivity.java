@@ -15,6 +15,7 @@ import com.cosmo.arquitecturamvpbase.R;
 import com.cosmo.arquitecturamvpbase.helper.Constants;
 import com.cosmo.arquitecturamvpbase.model.Product;
 import com.cosmo.arquitecturamvpbase.presenter.ProductPresenter;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.views.BaseActivity;
 import com.cosmo.arquitecturamvpbase.views.adapter.ProductAdapter;
 
@@ -24,7 +25,7 @@ import java.util.ArrayList;
  * Created by leidyzulu on 16/09/17.
  */
 
-public class ProductActivity extends BaseActivity<ProductPresenter> implements IProductView {
+public class ProductActivity extends BaseActivity<ProductPresenter, BaseRepository> implements IProductView {
 
     private ListView productList;
     private ProductAdapter productAdapter;

@@ -2,6 +2,7 @@ package com.cosmo.arquitecturamvpbase.presenter;
 
 import com.cosmo.arquitecturamvpbase.R;
 import com.cosmo.arquitecturamvpbase.model.DeleteResponse;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.repository.IProductRepository;
 import com.cosmo.arquitecturamvpbase.repository.RepositoryError;
 import com.cosmo.arquitecturamvpbase.views.activities.IDetailProductView;
@@ -12,7 +13,7 @@ import retrofit.RetrofitError;
  * Created by leidyzulu on 23/09/17.
  */
 
-public class DetailProductPresenter extends BasePresenter<IDetailProductView> {
+public class DetailProductPresenter extends BasePresenter<IDetailProductView, BaseRepository> {
 
     private IProductRepository productRepository;
 

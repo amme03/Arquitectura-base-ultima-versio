@@ -5,13 +5,28 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "com.cosmo.arquitecturamvpbase"
-        manifestPlaceholders=[ onesignal_app_id:"215731af-e5f0-4de0-8b9c-0d57d1c796e2", onesignal_google_project_number:"REMOTE"]
+        manifestPlaceholders = [onesignal_app_id: "215731af-e5f0-4de0-8b9c-0d57d1c796e2", onesignal_google_project_number: "REMOTE"]
         minSdkVersion 21
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release {
+            storeFile file("my-release-key.jks")
+            storePassword "Octubre19832003"
+            keyAlias "amme03"
+            keyPassword "Octubre19832003"
+        }
+    }
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -34,11 +49,20 @@ dependencies {
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.onesignal:OneSignal:3.+@aar'
     compile 'com.google.code.gson:gson:2.7'
+    compile 'com.google.android.gms:play-services-analytics:11.0.0'
+    compile 'com.github.moondroid.coverflow:library:1.0'
+    compile 'com.android.support:cardview-v7:25.3.1'
     compile 'com.estimote:sdk:1.0.12'
-    compile ('com.squareup.retrofit:converter-simplexml:1.9.0'){
-        exclude group: 'xpp3' , module: 'xpp3'
-        exclude group: 'stax' , module: 'stax-api'
-        exclude group: 'stax' , module:'stax'
+    compile 'me.zhanghai.android.materialratingbar:library:1.0.2'
+
+    compile 'com.google.android.gms:play-services-maps:11.0.0'
+    compile 'com.google.android.gms:play-services-location:11.0.0'
+    compile 'com.github.jd-alexander:library:1.1.0'
+
+    compile('com.squareup.retrofit:converter-simplexml:1.9.0') {
+        exclude group: 'xpp3', module: 'xpp3'
+        exclude group: 'stax', module: 'stax-api'
+        exclude group: 'stax', module: 'stax'
     }
 
     testCompile 'junit:junit:4.12'

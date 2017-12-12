@@ -3,6 +3,7 @@ package com.cosmo.arquitecturamvpbase.services;
 import com.cosmo.arquitecturamvpbase.model.Breakfast_menu;
 import com.cosmo.arquitecturamvpbase.model.DeleteResponse;
 import com.cosmo.arquitecturamvpbase.model.Product;
+import com.cosmo.arquitecturamvpbase.model.Records;
 import com.cosmo.arquitecturamvpbase.model.User;
 import com.cosmo.arquitecturamvpbase.model.Note;
 
@@ -46,4 +47,7 @@ public interface IServices {
 
     @GET("/simple.xml")
     Breakfast_menu getMenu();
+
+    @GET("/current.xml")
+    Records getMovies();
 }

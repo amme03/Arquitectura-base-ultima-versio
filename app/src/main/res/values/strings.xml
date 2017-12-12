@@ -37,5 +37,19 @@
 
     <item name="visible" type="id" />
     <item name="masked" type="id" />
+    <string name="title_activity_movies">MoviesActivity</string>
+    <string name="title_movie">Titulo</string>
+    <string name="movie_description">Sipnosis</string>
+    <string name="movie_casting">Costo</string>
+    <string name="movie_raiting">Reintin</string>
+
+
+    <string name="title_activity_maps">Map</string>
+    <string name="no_location_detected">Localización no detectada</string>
+    <string name="permission_rationale">Localización es necesaria para esta funcionalidad</string>
+    <string name="permission_denied_explanation">Permiso denegado</string>
+    <string name="settings">Configuración</string>
+    <string name="title_activity_movie_maps">Map</string>
+    <string name="title_activity_movies_maps">Map</string>
 
 </resources>

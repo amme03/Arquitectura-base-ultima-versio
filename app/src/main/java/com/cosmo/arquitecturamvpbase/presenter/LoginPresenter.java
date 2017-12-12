@@ -2,6 +2,7 @@ package com.cosmo.arquitecturamvpbase.presenter;
 
 import com.cosmo.arquitecturamvpbase.R;
 import com.cosmo.arquitecturamvpbase.model.User;
+import com.cosmo.arquitecturamvpbase.repository.BaseRepository;
 import com.cosmo.arquitecturamvpbase.repository.IProductRepository;
 import com.cosmo.arquitecturamvpbase.repository.RepositoryError;
 import com.cosmo.arquitecturamvpbase.views.activities.ILoginView;
@@ -10,7 +11,7 @@ import com.cosmo.arquitecturamvpbase.views.activities.ILoginView;
  * Created by leidyzulu on 13/10/17.
  */
 
-public class LoginPresenter extends BasePresenter<ILoginView> {
+public class LoginPresenter extends BasePresenter<ILoginView, BaseRepository> {
 
     private IProductRepository productRepository;
 
